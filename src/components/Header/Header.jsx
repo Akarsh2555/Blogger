@@ -30,11 +30,6 @@ function Header() {
       slug: "/add-post",
       active: authStatus,
     },
-    {
-      name: "Ask AI bot",
-      slug: "/chat-bot",
-      active: authStatus,
-    },
   ]
 
   return (

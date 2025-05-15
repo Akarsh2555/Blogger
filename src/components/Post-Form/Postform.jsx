@@ -6,7 +6,7 @@ import service from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
- function PostForm({ post }) {
+function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -69,10 +69,14 @@ import { useSelector } from "react-redux";
     }, [watch, slugTransform, setValue]);
 
     return (
-        <div className="min-h-screen bg-red-50 py-8">
+        <div
+            style={{
+                backgroundImage: "url('https://media.istockphoto.com/photos/blog-picture-id479759238?k=6&m=479759238&s=612x612&w=0&h=cIOO2FfZ9YKhVrXLAiBnu9r7Z9kWOa9uqPcBS5Pdebo=')",
+            }}
+            className="py-8 bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-red-700">
-                    <div className="bg-red-700 p-6">
+                <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-white">
+                    <div className="bg-gradient-to-r from-[#388D80] to-[#4583AA] p-6">
                         <h2 className="text-3xl font-bold text-white text-center">
                             Create Your Passion Your Way
                         </h2>
@@ -80,7 +84,7 @@ import { useSelector } from "react-redux";
                             Create unique and beautiful posts
                         </p>
                     </div>
-                    
+
                     <div className="p-6 sm:p-8">
                         <form onSubmit={handleSubmit(submit)} className="space-y-6">
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -88,21 +92,21 @@ import { useSelector } from "react-redux";
                                     <div className="space-y-4">
                                         <Input
                                             label="Title"
-                                            placeholder="Enter your recipe title"
-                                            className="w-full p-3 rounded-lg border-2 border-red-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200"
+                                            placeholder="Enter your post title"
+                                            className="w-full p-3 rounded-lg border-2 border-blue-200 focus:ring-2 focus:ring-red-500 focus:border-blue-500 transition-all duration-200"
                                             {...register("title", { required: true })}
                                         />
-                                        
+
                                         <Input
                                             label="Slug"
-                                            placeholder="recipe-url-slug"
-                                            className="w-full p-3 rounded-lg border-2 border-red-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all duration-200"
+                                            placeholder="post-url-slug"
+                                            className="w-full p-3 rounded-lg border-2 border-blue-200 focus:ring-2 focus:ring-red-500 focus:border-blue-500 transition-all duration-200"
                                             {...register("slug", { required: true })}
                                             onInput={(e) => {
                                                 setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                                             }}
                                         />
-                                        
+
                                         <div className="mt-6">
                                             <RTE
                                                 label="Content"
@@ -113,12 +117,12 @@ import { useSelector } from "react-redux";
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div className="lg:col-span-1 space-y-6">
-                                    <div className="p-4 bg-red-50 rounded-lg border-2 border-red-200">
+                                    <div className="p-4 bg-yellow-50 rounded-lg border-2 border-yellow-500">
                                         <div className="space-y-4">
                                             <div>
-                                                <p className="text-sm font-medium text-red-700 mb-2">Featured Image</p>
+                                                <p className="text-sm font-medium text-yellow-700 mb-2">Featured Image</p>
                                                 <Input
                                                     type="file"
                                                     className="w-full p-2 border-2 border-red-200 rounded-lg text-sm"
@@ -126,38 +130,36 @@ import { useSelector } from "react-redux";
                                                     {...register("image", { required: !post })}
                                                 />
                                             </div>
-                                            
+
                                             {post && post.featuredImage && (
                                                 <div className="mt-4">
                                                     <p className="text-sm font-medium text-red-700 mb-2">Current Image</p>
                                                     <div className="relative rounded-lg overflow-hidden border-2 border-red-200">
                                                         <img
-                                                            src={service.getFilePreview(post.featuredImage)}
+                                                            src={service.getFileView(post.featuredImage)}
                                                             alt={post.title}
                                                             className="w-full h-48 object-cover"
                                                         />
                                                     </div>
                                                 </div>
                                             )}
-                                            
+
                                             <div className="mt-4">
                                                 <SelectBtn
                                                     options={["active", "inactive"]}
                                                     label="Status"
-                                                    className="w-full p-2 border-2 border-red-200 rounded-lg"
+                                                    className="w-full p-2 border-2 border-white-200 rounded-lg"
                                                     {...register("status", { required: true })}
                                                 />
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <Button
                                         type="submit"
-                                        className={`w-full py-3 px-4 rounded-lg text-white font-medium transition-all duration-200 ${
-                                            post ? 'bg-orange-500 hover:bg-orange-600' : 'bg-red-700 hover:bg-red-800'
-                                        }`}
+                                        className={`w-full py-3 px-4 rounded-lg text-white font-medium transition-all duration-200 bg-yellow-500 hover:bg-[#FF8000]`}
                                     >
-                                        {post ? "Update Recipe" : "Publish Recipe"}
+                                        {post ? "Update Post" : "Publish Post"}
                                     </Button>
                                 </div>
                             </div>

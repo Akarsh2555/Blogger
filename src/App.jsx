@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css'
 import service from "./appwrite/auth"
+import { useSelector } from "react-redux"
 import { login, logout } from "./store/authslice"
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
@@ -9,6 +10,7 @@ import { Outlet } from 'react-router-dom'
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const authStatus = useSelector((state) => state.auth.status)
   const dispatch = useDispatch()
   const text = "Creating Your Blog...";
 
@@ -26,8 +28,8 @@ function App() {
   }, [])
 
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap 
-    content-between' style={{ backgroundColor: "#bc382e" }}>
+    <div className={`min-h-screen flex flex-wrap 
+    content-between' ${!authStatus ? 'bg-[#bc382e]' : 'bg-gradient-to-b from-bg-gray-900 to-bg-gray-800'}`}>
       <div className='w-full block'>
         <Header />
         <main>

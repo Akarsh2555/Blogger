@@ -12,6 +12,7 @@ import Signup from './components/pages/Signup'
 import EditPost from "./components/pages/EditPost";
 import Post from "./components/pages/Post";
 import WomenHealthChatbot from './components/Chatbot/chatbot.jsx'
+import AllPosts from './components/pages/AllPosts.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,11 +40,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/chat-bot",
+        path: "/all-posts",
         element: (
           <AuthLayout authentication>
             {" "}
-            <WomenHealthChatbot />
+            <AllPosts/>
           </AuthLayout>
         ),
       },

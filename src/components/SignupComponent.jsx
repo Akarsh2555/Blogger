@@ -46,9 +46,9 @@ function SignupComponent() {
     <div className="min-h-screen relative bg-red-100 flex items-center justify-center p-4 overflow-hidden">
       {/* Background Image Elements */}
       <div 
-        className="absolute top-0 left-0 w-full h-full opacity-10 bg-cover bg-center transform rotate-180" 
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center" 
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1516259762381-22954d7d9261?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1889&q=80')",
+          backgroundImage: "url('https://clickfirstmarketing.com/wp-content/uploads/Purpose-of-Blogging.jpeg')",
           zIndex: 1
         }}
       />

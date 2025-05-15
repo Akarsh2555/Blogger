@@ -32,14 +32,19 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="min-h-screen bg-gradient-to-b from-red-700 to-red-900">
+        <div 
+         style={{
+                backgroundImage: "url('https://p0.pikist.com/photos/212/711/typewriter-book-notes-paper-writing-write-antique-retro-desk.jpg')",
+                backgroundSize: 'cover',
+            }}
+        className="min-h-screen">
             <Container>
                 <div className="max-w-4xl mx-auto pt-8 pb-16">
                     <div className="bg-gradient-to-b from-orange-50 to-red-50 rounded-2xl shadow-xl overflow-hidden border-2 border-red-200">
                         <div className="relative">
                             <div className="aspect-w-16 aspect-h-9 w-full">
                                 <img
-                                    src={service.getFilePreview(post.featuredImage)}
+                                    src={service.getFileView(post.featuredImage)}
                                     alt={post.title}
                                     className="w-full h-full object-cover"
                                 />

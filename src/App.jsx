@@ -47,7 +47,7 @@ function App() {
         <div className="absolute w-full h-full rounded-full bg-yellow-500 opacity-75 animate-pulse"></div>
         <div className="absolute w-full h-full flex justify-center items-center">
           <img
-            src="public/img9.png"
+            src="/img9.png"
             alt="Blog Icon"
             className="w-12 h-12 animate-spin-slow"
           />

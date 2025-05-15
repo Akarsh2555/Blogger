@@ -132,6 +132,7 @@ function SignupComponent() {
             type="submit" 
             disabled={!selectedInterest} 
             className="w-full bg-red-600 text-white hover:bg-red-700 transition-colors disabled:opacity-50"
+            onClick={() => navigate('/login')}
           >
             Create Account
           </Button>

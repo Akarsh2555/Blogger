@@ -38,7 +38,7 @@ export default function Home() {
                                     Create Post Now
                                 </button>
                             </div>
-                            <img src="public/img4.jpg" className="w-1/6 h-auto animate-slide-down " />
+                            <img src="../public/img4.jpg" className="w-1/6 h-auto animate-slide-down " />
                         </div>
                         <div className="p-2 w-full flex justify-center items-center ">
                             <img src="https://blogger.googleusercontent.com/img/b/U2hvZWJveA/AVvXsEhw5K6-sy8Pgp7Yply7EXGI9Tqy6t-0ojmL_JZbdyIHjgthYQnpxqUesl5wZfpbiMwHN_x3M6CAEiND5MqGsHE1MEUOSvyXn3PHFWv8Cw_NlPzQEkPnYwS61RGHVmGXXwvTNcgBV0VMz-U2ecMArpMVGrwVaYXl4Fo/w192" className="w-1/4 h-auto animate-slide-down mt-auto"
